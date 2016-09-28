@@ -1,9 +1,10 @@
 package gobpcrypt_test
 
 import (
-	"gobasketpwd"
-	"gobasketpwd/oldformat"
 	"testing"
+
+	"github.com/elemc/gobpcrypt"
+	"github.com/elemc/gobpcrypt/oldformat"
 )
 
 const (
@@ -14,7 +15,7 @@ const (
 
 // oldformat
 func TestOldDecryptBytes(t *testing.T) {
-	bhash := gobasketpwd.HexToBytes(encOldHash123)
+	bhash := gobpcrypt.HexToBytes(encOldHash123)
 	dd := oldformat.OldDecryptBytes(bhash, pwd)
 	if string(dd) != "123" {
 		t.Fatal("Wrong OldDecryptBytes")

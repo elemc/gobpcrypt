@@ -167,3 +167,11 @@ func Unmarshal(data []byte) (*Element, error) {
 
 	return rootElement, nil
 }
+
+// IsEmptyRoot method for return result of empty root
+func (elem *Element) IsEmptyRoot() bool {
+	if elem.Type != ElementTypeRoot {
+		return false
+	}
+	return len(elem.Childs) == 0
+}
